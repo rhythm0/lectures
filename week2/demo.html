@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Cascading Style Sheets -->
 <!-- Demonstration of CSS basics: 
   colors, 
   typography, 
@@ -12,19 +13,35 @@
   <head>
     <meta charset="UTF-8">
     <title>Week 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tac+One&display=swap" rel="stylesheet">
+    <style>
+      li { color: blue; }
+      body {
+        font-family: "Arial", "Times New Roman", system-ui;
+      }
+      // span { color: red; }
+      // li span { color: black; }
+      div { border: solid 4px black; padding: 8px;}
+      .important { background-color: yellow; }
+      .special { font-style: italic; }
+      h1 { background-color: blue; color: black; }
+      #nutritional { text-decoration: underline;}
+      
+    </style>
   </head>
 
   <body>
-    <h1>Welcome to Week 2</h1>
-
-    <h2>My favorite kinds of fruits:</h2>
+    <h1 class="important special">Welcome to Week 2</h1><h2>Hello</h2>
     
-    <ul>
-      <li>Apples</li>
-      <li>Bananas</li>
-      <li>Cookies</li>
-    </ul>
-
+    <div>
+        <h2>My favorite <span>kinds of <span class="important">fruits</span></span>:</h2>
+        
+        <ul>
+          <li><span>Apples are</span> my favorite</li>
+          <li class="important">Bananas</li>
+          <li id="nutritional">Cookies</li>
+        </ul>
+    </div>
     <p>
       A University of Chicago education is about more than gaining a set of skills, achieving a rite of passage, or even honing the ability to think critically. It is a way of experiencing and moving through the world—interest in a lifelong dialogue across cultures and disciplines, inclination to ask good questions, and willingness to change perspective after encountering new ideas. From the beginning, we’ve believed in the benefits of a liberal arts education, including a robust intellectual foundation in a diversity of disciplines.
     </p>
