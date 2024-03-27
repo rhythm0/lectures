@@ -17,15 +17,30 @@ while True:
 
     # Get the client request
     request = client_connection.recv(1024).decode()
-    print(request)
-
+    # print(request)
+    first_line = request.split("\n")[0]
+    print("First line: ", first_line)
+    http_method, url, version = list(first_line.split())
+    parts = list(url.split("?"))
+    if len(parts) > 1:
+      path = parts[0]
+      query_string = parts[1]
+    else:
+      path = url
+      query_string = ""
+    
+    print("Path: ", path)
+    print("query_string: ", query_string)
+    
     # Generate HTML response body
-    html = """
+    html_1 = """
     <!DOCTYPE html>
     <html>
       <head>
        <style>
          body { font-family: system-ui; }
+    """
+    html_2 = """
        </style>
       </head>
       <body>
@@ -34,6 +49,14 @@ while True:
     </html>
     """
 
+    if len(query_string) > 0:
+      name, value = list(query_string.split("="))
+      html_middle = "body { " + name + ": " + value + "}"
+    else:
+      html_mmiddle = ""
+
+    html = html_1 + html_middle + html_2
+    
     # Prepare HTTP headers
     headers = f"Content-Length: {len(html)}\r\n"
     headers += f"Content-Type: text/html"
