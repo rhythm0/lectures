@@ -53,7 +53,7 @@ while True:
       name, value = list(query_string.split("="))
       html_middle = "body { " + name + ": " + value + "}"
     else:
-      html_mmiddle = ""
+      html_middle = ""
 
     html = html_1 + html_middle + html_2
     
