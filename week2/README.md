@@ -43,7 +43,7 @@ The plan for this week:
 
 4. Media queries
   * Mobile "responsive" rules using `min-width`, `max-width`, etc.
-  * Screen vs Print
+  * Screen vs Printa
   * DON'T FORGET in your HTML: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
   
 5. Using forms for user input
