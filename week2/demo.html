@@ -12,18 +12,54 @@
   <head>
     <meta charset="UTF-8">
     <title>Week 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tac+One&display=swap" rel="stylesheet">
+    <style>
+      li { color: blue; }
+      body {
+        font-family: "Arial", "Times New Roman", system-ui;
+      }
+      /* 想要同一行就用inline， 不显示就用none*/
+      h1,h2 { display: inline; }
+      /* h1,h2 { display: none; } */
+
+      /* MARGIN: 4 ways*/
+      h2 { margin: 0; margin-top: 12px; } 
+      /* h2 { margin-top: 12px; margin-bottom: 0; margin-left: 0; margin-right: 0;}  */
+      /* h2 { margin: 12px 0 0 0; }  */
+      /* h2 { margin: 12px 0; border: dotted 4px pink; }  */
+
+
+      /* box model: conctent, padding, border, margin (PBM) */
+      /* h2 { border: solid 4px black; padding: 8px;} */
+
+      /* Last definition wins!所以是红色！ */
+      /* li { color: red; } */
+      /* span { color: red; } */
+      /* li span { color: black; } the span in an li is black */
+      div {border: solid 4px black; padding: 8px; }
+      .important { background-color: yellow; } /* padding: 0 6px; */
+      .special { font-style: italic; }
+      h1 { background-color: blue; color: black;} 
+      /* #: apply to one thing on the page, id */
+      #nutrition { text-decoration: underline;}
+    </style>
   </head>
-
+  
   <body>
-    <h1>Welcome to Week 2</h1>
-
-    <h2>My favorite kinds of fruits:</h2>
+    <h1 class="important special">Welcome to Week 2</h1>
+    <h2>Hello</h2>
+    <div>
+      <!-- span not in list -->
+      <h2>My favorite <span>kinds of <span class="important">fruits</span></span>:</h2>
+          
+      <ul>
+        <!-- span in list -->
+        <li><span>Apples are</span> my favorite</li>
+        <li class="important">Bananas</li>
+        <li id="nutrition">Cookies</li>
+      </ul>
+    </div>
     
-    <ul>
-      <li>Apples</li>
-      <li>Bananas</li>
-      <li>Cookies</li>
-    </ul>
 
     <p>
       A University of Chicago education is about more than gaining a set of skills, achieving a rite of passage, or even honing the ability to think critically. It is a way of experiencing and moving through the world—interest in a lifelong dialogue across cultures and disciplines, inclination to ask good questions, and willingness to change perspective after encountering new ideas. From the beginning, we’ve believed in the benefits of a liberal arts education, including a robust intellectual foundation in a diversity of disciplines.
