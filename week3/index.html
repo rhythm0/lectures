@@ -18,7 +18,7 @@
     </nav>
 
     <main>
-      <h2>Variables and Objects</h2>
+      <h2 class="pointer">Variables and Objects</h2>
       <ul>
         <li>Use <code>let</code> or <code>const</code> to define variables.</li>
         <li>Arrays use <code>[ ]</code> brackets.</li>
@@ -118,9 +118,31 @@
       </ul>
     </main>
     
+    <style>
+      #section p ul:first {
+
+      }
+      .pointer:hover {
+        cursor: pointer;
+      }
+    </style>
     <script>
       // TO DO: Your code goes here
-      
+      function doNotGoToApple(event) {
+        event.preventDefault();
+        console.log(event)
+        window.alert("Mwahahahaha!")
+      }
+      const appleLink = document.querySelector("#apple")
+      appleLink.addEventListener("click", doNotGoToApple)
+
+
+      function whenHeadingClicked(event) {
+        console.log("The event data is:", event)
+        event.target.style.display = "none"
+      }
+      let heading = document.querySelector("h2")
+      heading.addEventListener("click", whenHeadingClicked)
     </script>
 
   </body>
