@@ -1,5 +1,13 @@
 // Your code goes here
 
+function onDocumentLoaded() {
+  document.querySelector("#get-location").addEventListener("click", function(e){
+    e.preventDefault();
+    navigator.geolocation.getCurrentPosition(setImagePosition)
+  })
+}
+document.addEventListener("DOMContentLoaded", onDocumentLoaded)
+
 // Update the map given a location object
 function setImagePosition(location) {
   console.log(location);

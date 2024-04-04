@@ -118,9 +118,39 @@
       </ul>
     </main>
     
+    <!-- 在HTML之后，才可以找到HTML里的ELEMENT，顺序很重要！ -->
+    <style>
+      /* 悬浮小手 */
+      h2:hover {
+        cursor: pointer;
+      } 
+    </style>
     <script>
       // TO DO: Your code goes here
-      
+      // Challeng 1: Don't go to apple.com
+      function doNotGoToApple(event) {
+        event.preventDefault(); // 阻止默认设置
+        console.log(event)
+        window.alert("Mwahahahhahah!")
+      }
+      const appleLink = document.querySelector("#apple")
+      appleLink.addEventListener("click", doNotGoToApple)
+
+
+      function whenHeadingClicked(event) {
+        console.log("The event data is", event)
+        event.target.style.display = "none"
+        // 弹窗
+        // window.alert("You clicked the heading.")
+        
+        // click消失
+        // const heading = document.querySelector("h2")
+        // heading.style.display = "none"
+      }
+      let heading = document.querySelector("h2")
+      heading.addEventListener("click", whenHeadingClicked)
+
+      let apple
     </script>
 
   </body>
