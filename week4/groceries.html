@@ -26,10 +26,28 @@
     <h2>Grocery List</h2>
 
     <form>
-      <input placeholder="Add your next grocery item here", value="" id="new_item" name="item" size="60" class="p-2">
+      <!-- 给value值就会有预设value, autofocus自动光标输入-->
+      <input placeholder="Add your next grocery item here" value="" 
+          id="new_item" 
+          name="item" 
+          size="60" 
+          class=""
+          autofocus="1">
+
+    <!-- <p><input type="radio">One</p>
+    <p><input type="radio">Two</p>
+    <p><input type="radio">Three</p>
+    <p><input type="checkbox">Can substitute</p>
+    <p><input type="email"></p>
+    <p><input type="password"></p>
+    <p><input type="submit"></p> -->
     </form>
 
-    <ul id="groceries"></ul>
+    <ul id="groceries">
+      <template id="new-item-template">
+        <li>Cookies</li>
+      </template>
+    </ul>
 
 
   </body>
