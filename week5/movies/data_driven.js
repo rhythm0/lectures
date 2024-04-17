@@ -8,15 +8,28 @@ data = [
   { title: "Princess Bride", img: 'images/toy_story.jpg', desc: "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room." },
 ]
 
+class Movie {
+  constructor(movie_data) {
+    this.title = movie_data.title
+    this.image_source = movie_data.img
+    this.description = movie_data.desc
+  }
+
+  render(container_element) {
+    const movieContent = document.querySelector("#movie-template").content
+    let newMovieElement = movieContent.cloneNode(true)
+    newMovieElement.querySelector('h2').textContent = this.title
+    newMovieElement.querySelector('img').src = this.image_source
+    newMovieElement.querySelector('p').textContent = this.description
+    container_element.appendChild(newMovieElement)
+  }
+}
+
 const renderMovies = function () {
   const app = document.querySelector("#app")
-  const movieContent = document.querySelector("#movie-template").content
   data.forEach( (movie_data) => {
-    let newMovieElement = movieContent.cloneNode(true)
-    newMovieElement.querySelector('h2').textContent = movie_data.title
-    newMovieElement.querySelector('img').src = movie_data.img
-    newMovieElement.querySelector('p').textContent = movie_data.desc
-    app.appendChild(newMovieElement)
+    let newMovie = new Movie(movie_data)
+    newMovie.render(app)
   })
 }
 
