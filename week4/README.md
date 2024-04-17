@@ -19,9 +19,9 @@ Don't forget: tips and cheat sheet still in [index.html](index.html).
 
 4. Five ways to iterate over JS arrays
 
-4. JS formatted string interpolation with backtick syntax
+5. JS formatted string interpolation with backtick syntax
 
-5. The Big Idea: Resource, Representation, and State
+6. The Big Idea: Resource, Representation, and State
 
 ### Combining JavaScript with HTTP
 
