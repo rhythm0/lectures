@@ -7,6 +7,11 @@ Today there are two folders with sample code:
 
 **NOTE**: For next week, please install Node from https://nodejs.org/ if you wish to code along in class.
 
+### The JavaScript Event Loop
+
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop
+* To run a function "asynchronously", look at functions like `setTimeout()` and `setInterval()`
+
 ### Maintaining Page State with JS
 
 * Using the `Element.innerHTML` property
