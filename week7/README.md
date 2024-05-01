@@ -21,7 +21,7 @@ week7$ cd react-movies
 week7/react-movies$ npm install
 ```
 
-Now, start the server:
+Now, you can start (or restart) the server whenever you want:
 
 ``` shell
 week7/react-movies $ npm start

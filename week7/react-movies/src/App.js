@@ -3,7 +3,7 @@ import React from 'react';
 function Movie(props) {
   return (
     <div className="col-sm-3 text-center mb-2 poster">
-      <img src={props.poster_path} className="img-fluid" alt={props.title} />
+      <img src={'http://image.tmdb.org/t/p/w185' + props.poster_path} className="img-fluid" alt={props.title} />
 
       <p className="mt-2">
         {props.release_date ? props.release_date.substr(0, 4) : null}
@@ -36,14 +36,14 @@ class LikeButton extends React.Component {
 
 function App() {
   const data = [
-    { title: "The Princess Bride", poster_path: 'http://image.tmdb.org/t/p/w185/dvjqlp2sAhUeFjUOfQDgqwpphHj.jpg', release_date: '1999', vote_average: 10 },
-    { title: "Spider - Man", poster_path: 'http://image.tmdb.org/t/p/w185/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg', release_date: '1999', vote_average: 10 },
-    { title: "Star Wars", poster_path: 'http://image.tmdb.org/t/p/w185/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg', release_date: '1999', vote_average: 10 },
+    { title: "The Princess Bride", poster_path: '/dvjqlp2sAhUeFjUOfQDgqwpphHj.jpg', release_date: '1999', vote_average: 10 },
+    { title: "Spider - Man", poster_path: '/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg', release_date: '1999', vote_average: 10 },
+    { title: "Star Wars", poster_path: '/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg', release_date: '1999', vote_average: 10 },
     { title: "Jurassic Park", poster_path: 'https://image.tmdb.org/t/p/w185//b1xCNnyrPebIc7EWNZIa6jhb1Ww.jpg', release_date: '1993', vote_average: 10 },
-    { title: "Doctor Strange", poster_path: 'http://image.tmdb.org/t/p/w185/7WfK17BXE6szXlm4WOxfswgbdsL.jpg', release_date: '1999', vote_average: 10 },
-    { title: "Apollo 13", poster_path: 'http://image.tmdb.org/t/p/w185/kzj95o9FlVxKziQq36mjES3wxel.jpg', release_date: '1999', vote_average: 10 },
-    { title: "The Matrix", poster_path: 'http://image.tmdb.org/t/p/w185//f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg', release_date: '1999', vote_average: 10 },
-    { title: "Toy Story", poster_path: 'http://image.tmdb.org/t/p/w185/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg', release_date: '1999', vote_average: 10 },
+    { title: "Doctor Strange", poster_path: '/7WfK17BXE6szXlm4WOxfswgbdsL.jpg', release_date: '1999', vote_average: 10 },
+    { title: "Apollo 13", poster_path: '/kzj95o9FlVxKziQq36mjES3wxel.jpg', release_date: '1999', vote_average: 10 },
+    { title: "The Matrix", poster_path: '//f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg', release_date: '1999', vote_average: 10 },
+    { title: "Toy Story", poster_path: '/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg', release_date: '1999', vote_average: 10 },
   ]
   
   const movies = data.map(movie_data => <Movie title={movie_data.title} release_date={movie_data.release_date} poster_path={movie_data.poster_path} vote_average={movie_data.vote_average} />)
