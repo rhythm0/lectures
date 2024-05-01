@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Movie(props) {
   return (
@@ -16,26 +16,23 @@ function Movie(props) {
   )
 }
 
-class LikeButton extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { counter: 0 }
-  }
+function LikeButton(props) {
+  
+  const [counter, setCounter] = useState(0)
 
-  handleClick = (event) => {
+  function handleClick(event) {
     console.log(event)
-    this.setState({ counter: this.state.counter + 1 })
+    setCounter(counter + 1)
   }
 
-  render() {
-    return (
-      <button onClick={this.handleClick} className="text-decoration-none btn text-danger ">&hearts; <span>{this.state.counter}</span></button>
-    )
-  }
+  return (
+    <button onClick={handleClick} className="text-decoration-none btn text-danger ">&hearts; <span>{counter}</span></button>
+  )
 }
 
 function App() {
-  const data = [
+
+  const initialData = [
     { title: "The Princess Bride", poster_path: '/dvjqlp2sAhUeFjUOfQDgqwpphHj.jpg', release_date: '1999', vote_average: 10 },
     { title: "Spider - Man", poster_path: '/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg', release_date: '1999', vote_average: 10 },
     { title: "Star Wars", poster_path: '/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg', release_date: '1999', vote_average: 10 },
@@ -45,8 +42,19 @@ function App() {
     { title: "The Matrix", poster_path: '//f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg', release_date: '1999', vote_average: 10 },
     { title: "Toy Story", poster_path: '/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg', release_date: '1999', vote_average: 10 },
   ]
+
+  const [data, setData] = useState(initialData)
   
   const movies = data.map(movie_data => <Movie title={movie_data.title} release_date={movie_data.release_date} poster_path={movie_data.poster_path} vote_average={movie_data.vote_average} />)
+
+  function handleTopRated(props) {
+    const url = urlForMovies("top_rated")
+    fetch(url).then((r) => r.json()).then((internet_data) => setData(internet_data.results))
+  }
+  function handleNowPlaying(props) {
+    const url = urlForMovies("now_playing")
+    fetch(url).then((r) => r.json()).then((internet_data) => setData(internet_data.results))
+  }
 
   return (
     <div>
@@ -57,8 +65,8 @@ function App() {
         </form>
 
         <p className="mt-2">
-          <button className="btn btn-primary" >Top-Rated Movies</button>
-          <button className="btn btn-primary ms-3">Now Playing</button>
+          <button onClick={handleTopRated} className="btn btn-primary" >Top-Rated Movies</button>
+          <button onClick={handleNowPlaying} className="btn btn-primary ms-3">Now Playing</button>
         </p>
       </header>
 
