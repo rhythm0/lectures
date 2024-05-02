@@ -74,6 +74,8 @@ function App() {
         <p className="mt-2">
           <button onClick={handleTopRated} className="btn btn-primary" >Top-Rated Movies</button>
           <button onClick={handleNowPlaying} className="btn btn-primary ms-3">Now Playing</button>
+          <button onClick={handleTopRated} className="btn btn-primary" >Top-Rated Movies</button>
+          <button onClick={handleNowPlaying} className="btn btn-primary ms-3">Now Playing</button>
         </p>
       </header>
 
