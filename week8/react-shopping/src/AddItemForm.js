@@ -10,10 +10,10 @@ export default function Items(props) {
     setInputValue("")
   }
   return (
-    <div>
-      <h2>Add Item</h2>
+    <div className="my-8">
+      <h2 className="font-bold mb-2">Add Item</h2>
       <form onSubmit={onAddItem}>
-        <input value={inputValue} autoFocus type="text" onChange={(e) => setInputValue(e.target.value)} placholder="Apples, Bananas, etc..." />
+        <input className="p-4 border-2 border-slate-300 rounded-lg w-1/2 italic font-bold text-green-900" value={inputValue} autoFocus type="text" onChange={(e) => setInputValue(e.target.value)} placholder="Apples, Bananas, etc..." />
       </form>
     </div>
   )

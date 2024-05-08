@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './styles/App.css';
+// import './styles/App.css';
 import Items from './Items';
 import Totals from './Totals';
 import AddItemForm from './AddItemForm';
