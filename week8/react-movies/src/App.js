@@ -45,11 +45,18 @@ function App() {
     return <Movie onLiked={incrementLikes} likes={likes[movie_data.title] || 0} key={movie_data.title} title={movie_data.title} release_date={movie_data.release_date} poster_path={movie_data.poster_path} vote_average={movie_data.vote_average} />
   })
 
+  function handleSearch(event) {
+    event.preventDefault();
+    const url = urlForSearch(searchTerm)
+    fetch(url).then((r) => r.json()).then((internet_data) => setData(internet_data.results))
+  }
+  
+  const [searchTerm, setSearchTerm] = useState("")
   return (
     <div>
       <header className="row mb-5 justify-content-between">
-        <form className="col-sm-4">
-          <input className="form-control" autoFocus name="search" type="text" placeholder="Search by title...">
+        <form className="col-sm-4" onSubmit={handleSearch}>
+          <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="form-control" autoFocus name="search" type="text" placeholder="Search by title...">
           </input>
         </form>
 
