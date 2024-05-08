@@ -28,6 +28,7 @@ New concepts:
 * More details about object destructuring
 * React "snapshot" rendering process
 * React state change queueing
+* "Controlled" UI components to track state
 
 Still continuing with these themes:
 
