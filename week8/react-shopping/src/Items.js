@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import Item from './Item'
 
 
@@ -10,8 +9,8 @@ export default function Items(props) {
   const lineItems = props.items.map((item) => <Item key={item.name} onItemChanged={onItemChanged} name={item.name} price={item.price} qty={item.qty} />)
 
   return (
-    <div>
-      <h2>Items</h2>
+    <div className="w-2/3">
+      <h2 className="font-bold">Items</h2>
       <div id="items">
         {lineItems}
       </div>

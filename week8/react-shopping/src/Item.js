@@ -20,14 +20,14 @@ export default function Item(props) {
   const amount = props.price * item_qty
   
   return (
-    <div className="flex space-between items">
-      <div className="flex item_desc width-full">
-        <div className="flex center-vertically qty_buttons">
-          <button className="red" onClick={reduceQty}>-</button>
-          <p>{item_qty}</p>
-          <button className="green" onClick={increaseQty}>+</button>
+    <div className="flex space-between mt-4">
+      <div className="flex items-center space-between w-2/3">
+        <div className="flex items-center">
+          <button className="bg-red-800 text-white p-2 rounded mr-2" onClick={reduceQty}>-</button>
+          <p className="mx-2">{item_qty}</p>
+          <button className="bg-green-800 text-white p-2 rounded mx-2" onClick={increaseQty}>+</button>
         </div>
-        {props.name}
+        <p className="ml-4">{props.name}</p>
       </div>
 
       <p className="item_amount">${amount.toFixed(2)}</p>
