@@ -7,6 +7,9 @@ NOTE: Quiz #5, the last quiz, will be 15 minutes long and will be available star
 ### Agenda
 
 * Deploying a "static site" vs a "web application"
+
+static site: netlify.com
+
 * Cookies
 * Web Sockets
 

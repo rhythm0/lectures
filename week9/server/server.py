@@ -3,6 +3,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import make_response
 
 app = Flask(__name__)
 
@@ -16,13 +17,18 @@ def home():
 def handle_login():
     user = next((u for u in users() if u['email'] == request.form['email'] and u['password'] == request.form['password']), None)
     if user:
-        return render_template('login_success.html')
+        resp = make_response(render_template('login_success.html')) 
+        # 可以在console查cookie
+        resp.set_cookie('user_id', str(user['id'])) 
+        return resp 
+        # return render_template('login_success.html')
     
     return render_template('login_failure.html')
 
 
 @app.route("/account", methods=["GET"])
 def show_account():
+    # user_id = request.cookies.get('user_id')
     # Based on the user, look up their profile information
     # SQL.....
     user = users()[0]
